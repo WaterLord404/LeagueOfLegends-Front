@@ -1,0 +1,66 @@
+<div class="container-fluid">
+    <div class="container">
+        <form [formGroup]="championForm">
+            <div class="form-group">
+                <label for="nombre">Nombre del personaje</label>
+                <input type="text" class="form-control" id="name" formControlName="name">
+
+                <label for="damage">Daño del personaje</label>
+                <input type="text" class="form-control" id="damage" formControlName="attackDamage">
+
+                <label for="armor">Armadura del personaje</label>
+                <input type="text" class="form-control" id="armor" formControlName="armor">
+                <br>
+
+                <button type="submit" class="btn btn-primary" (click)="addChampion()">Enviar</button>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-2">
+                        <input type="text" class="form-control" id="id" formControlName="id">
+                    </div>
+
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary" (click)="searchChampionById()">Buscar por id</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <table class="table table-striped table-dark" *ngIf="champion">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Daño</th>
+                <th scope="col">Armadura</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">{{champion["id"]}}</th>
+                <td>{{champion["name"]}}</td>
+                <td>{{champion["attackDamage"]}}</td>
+                <td>{{champion["armor"]}}</td>
+            </tr>
+    </table>
+
+    <table class="table table-striped table-dark" *ngIf="champions">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Daño</th>
+                <th scope="col">Armadura</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of champions">
+                <th scope="row">{{item["id"]}}</th>
+                <td>{{item["name"]}}</td>
+                <td>{{item["attackDamage"]}}</td>
+                <td>{{item["armor"]}}</td>
+            </tr>
+    </table>
+</div>
