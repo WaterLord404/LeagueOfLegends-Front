@@ -2,7 +2,7 @@ BackEnd https://github.com/WaterLord404/LeagueOfLegends-ApiRest
 
 FrontEnd https://github.com/WaterLord404/LeagueOfLegends-Front
 
-Requisitos:
+# Requisitos:
 
 - Base de datos con mysql (db_lol) en docker, con un usuario dummy:dummy que tenga permisos
 
